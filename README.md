@@ -27,14 +27,15 @@ Execute Django admin and create details for 10 books
 models.py
 from django.db import models
 from django.contrib import admin
-class Book_DB(models.Model):
-      bookno=models.IntegerField(primary_key = True);
-      bookname=models.CharField(max_length = 20);
-      authorname=models.CharField(max_length = 25);
-      bookrate=models.IntegerField(primary_key = True);
-      rating=models.CharField(max_length = 20);
-class Book_DBAdmin(admin.ModelAdmin):
-     list_display=("bookno","bookname","authorname","bookrate","rating");
+class libraryBook(models. Model):
+    title=models.CharField(max_length=15);
+    BookID=models.IntegerField(primary_key=True);
+    author=models.CharField(max_length=10);
+    publisher=models.CharField(max_length=8);
+    price=models.IntegerField();
+    pages=models.IntegerField();
+class libraryBookAdmin(admin.ModelAdmin):
+   list_display=("title","BookID","author","publisher","price","pages");
 
 admin.py
 from django.contrib import admin 
